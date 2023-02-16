@@ -1,34 +1,52 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { Tweet } from './components/Tweet'
+import { House, Hash, Bell, Envelope, BookmarkSimple, FileText, User, DotsThreeCircle } from 'phosphor-react'
+
 
 import './global.css'
 
+import twitterLogo from './assets/logo-twitter.svg'
+
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <div>
-      <Tweet user='Thalys' likes={10}>
-      meu primeiro tweet
-      </Tweet>
+    <div className='layout'>
+      <aside className='sidebar'>
+        <img className='logo' src={twitterLogo} alt="Logo" />
 
-      <Tweet user='Vitor'>
-        hello world
-      </Tweet>
+        <nav className='main-navigation'>
+          <a className='active' href="">
+            <House weight='fill' />
+            Home
+          </a>
+          <a href="">
+            <Hash />
+            Explore
+          </a>
+          <a href="">
+            <Bell />
+            Notification</a>
+          <a href="">
+            <Envelope />
+            Message</a>
+          <a href="">
+            <BookmarkSimple />
+            Bookmarks</a>
+          <a href="">
+            <FileText />
+            Lists</a>
+          <a href="">
+            <User />
+            Profile</a>
+          <a href="">
+            <DotsThreeCircle />
+            More</a>
+        </nav>
 
-      <Tweet user='Gabriel'>
-        Testando
-      </Tweet>
-
-      <Tweet user='Rafael'>
-        Conteudo 4
-        </Tweet>
+        <button className='new-tweet' type='button' >Tweet</button>
+      </aside>
+      <div className="content">
+        content
+      </div>
     </div>
   </React.StrictMode>,
 )
-
-// Componentes: pequenas partes de interfaces reutilizaveis
-
-
-// const editUser = false
-{/* <p>teste</p>
-<button type='submit' >{editUser ? 'editar usuário' : 'criar usuário'}</button> */}
